@@ -24,7 +24,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "CLRC663_SPI.h"
+#include "CLRC663_Register.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,6 +97,16 @@ int main(void)
     MX_USB_DEVICE_Init();
     /* USER CODE BEGIN 2 */
     printf("Agent_CCID_Reader initialized. RTT Log Enabled!\r\n");
+
+    /* 确保 CLRC663 片选 NSS 初始化为高电平（空闲） */
+    CLRC663_NSS_HIGH();
+
+    /* 硬件就绪稳定延时 */
+    HAL_Delay(10);
+
+    /* 读取并打印 CLRC663 芯片的版本寄存器信息 */
+    uint8_t clrc663_ver = CLRC663_ReadReg(CLRC663_REG_VERSION);
+    printf("CLRC663 Chip Version: 0x%02X\r\n", clrc663_ver);
     /* USER CODE END 2 */
 
     /* Infinite loop */
