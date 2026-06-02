@@ -1,0 +1,16 @@
+{
+    "keilAssistant.projects": [
+        "MDK-ARM/Agent_CCID_Reader.uvprojx"
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "MDK-ARM/Agent_CCID_Reader": true,
+        "MDK-ARM/DebugConfig": true,
+        "MDK-ARM/RTE": true
+    }
+}

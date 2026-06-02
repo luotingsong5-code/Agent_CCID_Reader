@@ -1,0 +1,11 @@
+CompileFlags:
+  Add:
+    - -isystemC:\Users\Administrator\.eide\tools\gcc_arm\arm-none-eabi\include\c++\15.2.1
+    - -isystemC:\Users\Administrator\.eide\tools\gcc_arm\arm-none-eabi\include\c++\15.2.1\arm-none-eabi\thumb\v7-m\nofp
+    - -isystemC:\Users\Administrator\.eide\tools\gcc_arm\arm-none-eabi\include\c++\15.2.1\backward
+    - -isystemC:\Users\Administrator\.eide\tools\gcc_arm\lib\gcc\arm-none-eabi\15.2.1\include
+    - -isystemC:\Users\Administrator\.eide\tools\gcc_arm\lib\gcc\arm-none-eabi\15.2.1\include-fixed
+    - -isystemC:\Users\Administrator\.eide\tools\gcc_arm\arm-none-eabi\include
+  Remove: []
+  CompilationDatabase: ./build/Agent_CCID_Reader
+  Compiler: C:\Users\Administrator\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe

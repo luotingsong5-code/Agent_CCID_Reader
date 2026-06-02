@@ -1,0 +1,46 @@
+
+# BSP 说明
+
+USB_DISCONNECT 引脚，输出高电平开启USB连接，输出低电平关闭USB连接
+#define USB_DISCONNECT_PORT GPIOE
+#define USB_DISCONNECT_PIN  GPIO_Pin_13
+GPIO_SetBits(USB_DISCONNECT_PORT, USB_DISCONNECT_PIN);
+GPIOPinxConfig(USB_DISCONNECT_PORT, USB_DISCONNECT_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_OD);
+
+
+LED控制引脚,输出高电平表示亮灯，输出低电平表示灭灯
+#define LED_PORT         	GPIOE
+#define LED_PIN_1        	GPIO_Pin_15
+GPIO_ResetBits(LED_PORT, LED_PIN_1);
+GPIOPinxConfig(LED_PORT, LED_PIN_1, GPIO_Speed_50MHz, GPIO_Mode_Out_PP);
+
+蜂鸣器引脚，输出高电平蜂鸣器响，输出电平蜂鸣器不响
+#define BUZ_PORT			GPIOE
+#define BUZ_PIN				GPIO_Pin_14
+GPIO_ResetBits(BUZ_PORT, BUZ_PIN);
+GPIOPinxConfig(BUZ_PORT, BUZ_PIN, GPIO_Speed_10MHz, GPIO_Mode_Out_PP);
+
+CLRC663 IRQ = PA3
+#define CLRC663_IRQ_PORT		GPIOA
+#define CLRC663_IRQ_PIN 		GPIO_Pin_3
+
+CLRC663 PODWN/RESET  = PC4
+#define CLRC663_PODWN_PORT		GPIOC
+#define CLRC663_PDOWN_PIN 		GPIO_Pin_4
+
+
+CLRC663 SPI IF3(NSS) = PA4
+#define SPI1_NSS_PORT  		GPIOA           //IF3 NSS
+#define SPI1_NSS_PIN   		GPIO_Pin_4	    //PA4
+
+CLRC663 SPI_IF1(SCK) = PA5
+#define SPI1_SCK_PORT  		GPIOA
+#define SPI1_SCK_PIN   		GPIO_Pin_5      //PA5
+
+CLRC663 SPI_IF2(MISO) = PA6
+#define SPI1_MISO_PORT  	GPIOA
+#define SPI1_MISO_PIN   	GPIO_Pin_6      //PA6
+
+CLRC663 SPI_IF0(MOSI) = PA7
+#define SPI1_MOSI_PORT  	GPIOA
+#define SPI1_MOSI_PIN   	GPIO_Pin_7      //PA7
