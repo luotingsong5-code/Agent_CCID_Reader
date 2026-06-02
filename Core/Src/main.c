@@ -68,6 +68,7 @@ int main(void)
 {
 
     /* USER CODE BEGIN 1 */
+		uint8_t clrc663_ver;
 
     /* USER CODE END 1 */
 
@@ -105,7 +106,12 @@ int main(void)
     HAL_Delay(10);
 
     /* 读取并打印 CLRC663 芯片的版本寄存器信息 */
-    uint8_t clrc663_ver = CLRC663_ReadReg(CLRC663_REG_VERSION);
+    clrc663_ver = CLRC663_ReadReg(CLRC663_REG_VERSION);
+		CLRC663_WriteReg(CLRC663_REG_FIFODATA,0x55);
+		clrc663_ver = CLRC663_ReadReg(CLRC663_REG_FIFOLENGTH);
+		CLRC663_WriteReg(CLRC663_REG_FIFODATA,0x66);
+		clrc663_ver = CLRC663_ReadReg(CLRC663_REG_FIFOLENGTH);
+		
     printf("CLRC663 Chip Version: 0x%02X\r\n", clrc663_ver);
     /* USER CODE END 2 */
 
