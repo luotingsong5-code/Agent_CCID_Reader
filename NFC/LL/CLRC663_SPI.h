@@ -43,6 +43,12 @@ void CLRC663_WriteReg(uint8_t reg, uint8_t val);
 uint8_t CLRC663_ReadReg(uint8_t reg);
 
 /**
+ * @brief       CLRC663 芯片硬件复位
+ * @return      uint8_t 返回 1 表示复位成功且通信正常，返回 0 表示复位失败或通信异常
+ */
+uint8_t CLRC663_HW_Reset(void);
+
+/**
  * @brief       向 CLRC663 连续写入多个字节（寄存器地址自增）
  * @param       reg 起始寄存器物理地址
  * @param       data 待写入数据缓冲区指针

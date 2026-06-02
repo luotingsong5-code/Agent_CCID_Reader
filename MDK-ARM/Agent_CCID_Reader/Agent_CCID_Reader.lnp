@@ -1,4 +1,5 @@
 --cpu Cortex-M3
+"agent_ccid_reader\clrc663_spi.o"
 "agent_ccid_reader\segger_rtt.o"
 "agent_ccid_reader\segger_rtt_printf.o"
 "agent_ccid_reader\startup_stm32f103xe.o"

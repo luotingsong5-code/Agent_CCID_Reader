@@ -105,12 +105,19 @@ int main(void)
     /* 硬件就绪稳定延时 */
     HAL_Delay(10);
 
+    /* 执行 CLRC663 硬件复位并校验 */
+    if (CLRC663_HW_Reset() == 1) {
+        printf("CLRC663 Hardware Reset: SUCCESS (Command Reg: 0x40)\r\n");
+    } else {
+        printf("CLRC663 Hardware Reset: FAILED!\r\n");
+    }
+
     /* 读取并打印 CLRC663 芯片的版本寄存器信息 */
     clrc663_ver = CLRC663_ReadReg(CLRC663_REG_VERSION);
-		CLRC663_WriteReg(CLRC663_REG_FIFODATA,0x55);
-		clrc663_ver = CLRC663_ReadReg(CLRC663_REG_FIFOLENGTH);
-		CLRC663_WriteReg(CLRC663_REG_FIFODATA,0x66);
-		clrc663_ver = CLRC663_ReadReg(CLRC663_REG_FIFOLENGTH);
+//    CLRC663_WriteReg(CLRC663_REG_FIFODATA,0x55);
+//    clrc663_ver = CLRC663_ReadReg(CLRC663_REG_FIFOLENGTH);
+//    CLRC663_WriteReg(CLRC663_REG_FIFODATA,0x66);
+//    clrc663_ver = CLRC663_ReadReg(CLRC663_REG_FIFOLENGTH);
 		
     printf("CLRC663 Chip Version: 0x%02X\r\n", clrc663_ver);
     /* USER CODE END 2 */
