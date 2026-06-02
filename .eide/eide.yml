@@ -1,7 +1,7 @@
 version: "4.1"
 name: Agent_CCID_Reader
 type: ARM
-deviceName: null
+deviceName: STM32F103VE
 packDir: null
 srcDirs:
   - Core/Src
@@ -89,7 +89,7 @@ targets:
         baseAddr: ""
         bin: ""
         cpuInfo:
-          cpuName: "null"
+          cpuName: STM32F103VE
           vendor: "null"
         otherCmds: ""
         proType: 1
